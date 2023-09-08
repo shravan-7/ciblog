@@ -1,7 +1,35 @@
-.post-date{
-    background: #06f1be;
-    padding: 4px;
-    margin: 3px 0px;
-    display:block ;
+.post-date {
+	background: #06f1be;
+	padding: 4px;
+	margin: 3px 0px;
+	display: block;
+}
+.post-thumb {
+	width: 100%;
+}
+#readmore {
+	background-color: rgb(0, 136, 255);
+}
+#edit {
+	margin-right: 16px;
+}
+.pagination-links {
+	margin: 30px 0;
+}
+.pagination-links strong {
+	padding: 8px 13px;
+	margin: 5px;
+	font-weight: bold;
+	background: rgba(9, 204, 218, 0.5);
+	border: 1px rgb(255, 0, 0) solid;
+}
 
+.pagination-links a {
+	padding: 8px 13px;
+	margin: 5px;
+	background: white;
+	border: 1px rgb(0, 47, 255) solid;
+}
+.cat-delete {
+	display: inline;
 }

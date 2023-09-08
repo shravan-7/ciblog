@@ -1,9 +1,20 @@
-<h2><?=$title ?></h2>
-<?php foreach($posts as $post): ?>
-    <h3><?php echo $post['title']; ?></h3>
-    <small class="post-date">Posted on: <?php echo $post['created_at'] ?></small><br>
+<h2><?= $title ?></h2>
 
-    <?php echo $post['body']; ?>
-    <br><br>
-    <p><a class="btn btn-default"href="<?php echo site_url('/posts/'.$post['slug']); ?>">Read More</a></p>
-    <?php endforeach; ?>
+<?php foreach ($posts as $post) : ?>
+    <h3><?php echo $post['title']; ?></h3>
+    <div class="row">
+        <div class="col-md-3">
+            <img class="post-thumb" src="<?php echo site_url(); ?>images/posts-images/<?php echo $post['post_image'] ?>">
+        </div>
+        <div class="col-md-9">
+            <small class="post-date">Posted on: <?php echo $post['created_at']; ?> in<strong> <?php echo $post['name']; ?></strong></small><br>
+            <?php echo word_limiter($post['body'], 60); ?>
+            <br><br>
+            <p><a id="readmore" class="btn btn-default" href="<?php echo site_url('/posts/' . $post['slug']); ?>">Read More</a></p>
+        </div>
+    </div>
+
+<?php endforeach; ?>
+<div class="pagination-links">
+<?php if (!empty($posts)) echo $this->pagination->create_links(); ?>
+</div>
